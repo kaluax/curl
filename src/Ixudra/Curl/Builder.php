@@ -299,11 +299,11 @@ class Builder {
         foreach( $this->curlOptions as $key => $value ) {
             $array_key = constant( 'CURLOPT_' . $key );
 
-            if( $key == 'POSTFIELDS' && is_array( $value ) ) {
-                $results[ $array_key ] = http_build_query( $value, null, '&' );
-            } else {
+            // if( $key == 'POSTFIELDS' && is_array( $value ) ) {
+            //     $results[ $array_key ] = http_build_query( $value, null, '&' );
+            // } else {
                 $results[ $array_key ] = $value;
-            }
+            // }
         }
 
         return $results;
